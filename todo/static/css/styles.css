@@ -1,0 +1,17 @@
+table {
+    margin: 0 auto;
+    padding: 5px;
+    border: 1px dashed gray;
+}
+
+thead {
+    background-color: blanchedalmond;
+}
+
+tbody > tr {
+    background-color: rgb(195, 255, 255);
+}
+
+td {
+    padding: 10px 30px;
+}

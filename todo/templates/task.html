@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ data.title }}</title>
+</head>
+<body>
+    <a href="{% url 'index' %}">Voltar</a>
+    <h1>{{ data.title }}</h1>
+    <fieldset>
+        <h3>Destinatario</h3>
+        <p>{{ data.who }}</p>
+    </fieldset>
+    <fieldset>
+        <h3>Contato</h3>
+        <p>{{ data.who.contact }}</p>
+    </fieldset>
+    <fieldset>
+        <h3>Descriçao</h3>
+        <p>{{ data.description}}</p>
+    </fieldset>
+    <fieldset>
+        <h3>Data de entrega</h3>
+        <p>{{ data.dateToFinish }}</p>
+    </fieldset>
+
+</html>

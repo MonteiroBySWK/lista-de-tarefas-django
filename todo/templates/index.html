@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Terefas</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <h1>Lista de tarefas</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Tarefa</th>
+                <th>Requerente</th>
+                <th>DeadLine</th>
+                <th>Status</th>
+                <th>Link</th>
+            </tr>
+        </thead>
+        {% if data %}
+        <tbody>
+            {%for item in data %}
+            <tr>
+                <td>{{ item.title }}</td>
+                <td>{{ item.who }}</td>
+                <td>{{ item.dateToFinish }}</td>
+                {% if item.status == True %}
+                <td>Terminado</td>
+                {% else %}
+                <td>Ainda nao</td>
+                {% endif %}
+                <td><a href="{% url 'task' item.id %}">Acessar</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+        {% endif %}
+    </table>
+</body>
+</html>
